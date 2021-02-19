@@ -16,46 +16,32 @@ Exercise Gates
 
 ![gates](gates.png)
 
-https://www.edaplayground.com/x/LPUq
+https://www.edaplayground.com/x/GyM2
 
 ```VHDL
-------------------------------------------------------------------------
---
--- Example of basic OR, AND, XOR gates.
--- Nexys A7-50T, Vivado v2020.1, EDA Playground
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
 library ieee;               
 use ieee.std_logic_1164.all;
 
-------------------------------------------------------------------------
--- Entity declaration for basic gates
-------------------------------------------------------------------------
+
 entity gates is
     port(
-        a_i    : in  std_logic;         
-        b_i    : in  std_logic;         
-        c_i    : in  std_logic;
-        f_o    : out std_logic;         
-        fnand_o: out std_logic;         
-        fnor_o : out std_logic          
+        a_i             : in  std_logic;
+        b_i             : in  std_logic;
+        c_i             : in  std_logic;
+        
+        f_o             : out std_logic;
+        fNAND_o         : out std_logic;
+        fNOR_o          : out std_logic
+        
     );
 end entity gates;
 
-------------------------------------------------------------------------
--- Architecture body for basic gates
-------------------------------------------------------------------------
 architecture dataflow of gates is
 begin
-    f_o  <= ((not b_i) and a_i) or ((not c_i) and (not b_i));
-    fnand_o <= not(not((not b_i) and a_i) and not((not c_i) and (not b_i)));
-    fnor_o <= not(b_i or (not a_i)) or not(c_i or b_i);
-
+    f_o       <= (((not b_i) and a_i) or ((not c_i) and (not b_i)));
+    fNAND_o   <= (not(not((not b_i) and a_i) and not((not c_i) and (not b_i))));
+    fNOR_o    <= (not(b_i or (not a_i)) or not(c_i or b_i));
+    
 end architecture dataflow;
 
 ```
@@ -64,7 +50,7 @@ Exercise Distributive Laws
 
 ![distributiveLaws](distributiveLaws.png)
 
-https://www.edaplayground.com/x/epLw
+https://www.edaplayground.com/x/6phZ
 
 ```
 library ieee;               
@@ -93,3 +79,4 @@ begin
 end architecture dataflow;
 
 ```
+
