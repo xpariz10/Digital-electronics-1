@@ -69,7 +69,7 @@ https://www.edaplayground.com/x/epLw
 https://www.edaplayground.com/x/Sy4h
 
 
-
+```vhdl
     architecture behavioral of comparator_4bit is
     begin
         B_less_A_o     <= '1' when (b_i < a_i) else '0';
@@ -77,8 +77,9 @@ https://www.edaplayground.com/x/Sy4h
         B_greater_A_o  <= '1' when (b_i > a_i) else '0';
         
     end architecture behavioral;
-    
-    
+```   
+
+```vhdl    
     p_stimulus  :  process
         begin
         
@@ -243,7 +244,7 @@ https://www.edaplayground.com/x/Sy4h
             report "Stimulus process finished" severity note;
             wait;
         end process p_stimulus;     
-
+```
 
 
 No error:
